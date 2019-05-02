@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html> 
+<head>
+<!--     
+    title: index.js 
+
+    date: 4/30/2019
+  
+    author:  javier olaya
+  
+    description:
+
+    1. Search engine query
+    Write a Javascript application (command-line or GUI) that prompts the user 
+    for a text string, performs a Web search (Google/Yahoo/Bing/etc - your choice) 
+    and returns the title and URL of the first result. Use any 
+    tools / libraries you wish, but you must provide instructions 
+    on how to build and run your application. Please include a 
+    brief description of your application and why you implemented 
+    it the way you did. 
+  -->
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' >
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link href="css/index.css" rel="stylesheet">
+</head>
+<body >
+    <script>
+        (function() {
+          try{
+          var cx = '016342491875161093632:qly8wfpzzke';
+          var gcse = document.createElement('script');
+          gcse.type = 'text/javascript';
+          gcse.async = true;
+          gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gcse, s);
+          }catch(err){console.log(err)};
+        })();
+    </script>
+  <gcse:search webSearchResultSetSize="1"></gcse:search>
+  <div class="wrapper">
+    <form id="one" class="form1">
+    <label for="inputFiles">select inputFile</label><br>  
+    <input class="innerInput" type="file" id="inputFiles" onchange="handleFiles(this.files)" 
+    accept=".txt"></input><br>
+    <label for="patternsFiles">select patternsFile</label><br>     
+    <input type="file" id="patternsFiles" onchange="handleFiles(this.files)" 
+    accept=".txt"></input><br>
+    <div>
+      <label for="mode1">mode1</label><br>
+      <input id="mode1" type="radio" name="mode" value="1"><br>
+      <label for="mode2">mode2</label><br>
+      <input id="mode2" type="radio" name="mode" value="2"><br>
+      <label for="mode3">mode3</label><br>
+      <input id="mode3" type="radio" name="mode" value="3"><br>
+    </div>
+    <button type="submit" >read files</button>
+    </form>
+  </div> 
+  <div id="funcResults" class="funcResults">results</div>
+
+  <script src='js/index.js'></script>
+</body>
+</html>
